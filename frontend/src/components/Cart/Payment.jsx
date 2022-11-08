@@ -130,7 +130,7 @@ const Payment = () => {
 
     return (
         <>
-            <MetaData title="Flipkart: Secure Payment | Paytm" />
+            <MetaData title="Secure Payment" />
 
             <main className="w-full mt-20">
 
@@ -151,12 +151,12 @@ const Payment = () => {
                                             name="payment-radio-button"
                                         >
                                             <FormControlLabel
-                                                value="paytm"
+                                                value="payment"
                                                 control={<Radio />}
                                                 label={
                                                     <div className="flex items-center gap-4">
                                                         <img draggable="false" className="h-6 w-6 object-contain" src="https://rukminim1.flixcart.com/www/96/96/promos/01/09/2020/a07396d4-0543-4b19-8406-b9fcbf5fd735.png" alt="Paytm Logo" />
-                                                        <span>Paytm</span>
+                                                        <span>Payment</span>
                                                     </div>
                                                 }
                                             />

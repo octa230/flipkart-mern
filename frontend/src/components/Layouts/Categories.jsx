@@ -1,4 +1,7 @@
-import mobiles from '../../assets/images/Categories/phone.png';
+import { Link } from 'react-router-dom';
+
+
+{/**import mobiles from '../../assets/images/Categories/phone.png';
 import fashion from '../../assets/images/Categories/fashion.png';
 import electronics from '../../assets/images/Categories/electronics.png';
 import home from '../../assets/images/Categories/home.png';
@@ -7,44 +10,44 @@ import appliances from '../../assets/images/Categories/appliances.png';
 import furniture from '../../assets/images/Categories/furniture.png';
 import beauty from '../../assets/images/Categories/beauty.png';
 import grocery from '../../assets/images/Categories/grocery.png';
-import { Link } from 'react-router-dom';
+*/}
 
 const catNav = [
     {
-        name: "Mobiles",
-        icon: mobiles,
+        name: "Diwali",
+       // icon: mobiles,
     },
     {
-        name: "Fashion",
-        icon: fashion,
+        name: "Birthday",
+       // icon: fashion,
     },
     {
-        name: "Electronics",
-        icon: electronics,
+        name: "Anniversary",
+       // icon: electronics,
     },
     {
-        name: "Home",
-        icon: home,
+        name: "cakes",
+       // icon: home,
     },
     {
-        name: "Travel",
-        icon: travel,
+        name: "Flowers",
+       // icon: travel,
     },
     {
-        name: "Appliances",
-        icon: appliances,
+        name: "Plants",
+       // icon: appliances,
     },
     {
-        name: "Furniture",
-        icon: furniture,
+        name: "Occassions",
+       // icon: furniture,
     },
     {
-        name: "Beauty,Toys & more",
-        icon: beauty,
+        name: "Global",
+       // icon: beauty,
     },
     {
-        name: "Grocery",
-        icon: grocery,
+        name: "Gifts",
+       // icon: grocery,
     },
 ]
 

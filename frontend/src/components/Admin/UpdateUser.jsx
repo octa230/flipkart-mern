@@ -5,7 +5,6 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { clearErrors, getUserDetails, updateUser } from '../../actions/userAction';
 import { UPDATE_USER_RESET, REMOVE_USER_DETAILS } from '../../constants/userConstants';
 import Loading from './Loading';
-import Avatar from '@mui/material/Avatar';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Radio from '@mui/material/Radio';
@@ -28,7 +27,6 @@ const UpdateUser = () => {
     const [email, setEmail] = useState("");
     const [gender, setGender] = useState("");
     const [role, setRole] = useState("");
-    const [avatarPreview, setAvatarPreview] = useState("");
 
     const userId = params.id;
 
@@ -52,7 +50,6 @@ const UpdateUser = () => {
             setEmail(user.email);
             setGender(user.gender);
             setRole(user.role);
-            setAvatarPreview(user.avatar.url);
         }
         if (error) {
             enqueueSnackbar(error, { variant: "error" });
@@ -72,7 +69,7 @@ const UpdateUser = () => {
 
     return (
         <>
-            <MetaData title="Admin: Update User | Flipkart" />
+            <MetaData title="Admin: Update User" />
 
             {updateLoading && <BackdropLoader />}
 
@@ -126,11 +123,7 @@ const UpdateUser = () => {
                                 {/* <!-- gender input --> */}
 
                                 <div className="flex flex-col w-full justify-between sm:flex-row gap-3 items-center">
-                                    <Avatar
-                                        alt="Avatar Preview"
-                                        src={avatarPreview}
-                                        sx={{ width: 56, height: 56 }}
-                                    />
+    
                                     <TextField
                                         label="Role"
                                         select

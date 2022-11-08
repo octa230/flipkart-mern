@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField'
-import Avatar from '@mui/material/Avatar'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
@@ -30,8 +29,8 @@ const Register = () => {
 
     const { name, email, gender, password, cpassword } = user;
 
-    const [avatar, setAvatar] = useState();
-    const [avatarPreview, setAvatarPreview] = useState("preview.png");
+    //const [avatar, setAvatar] = useState();
+   // const [avatarPreview, setAvatarPreview] = useState("preview.png");
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -43,37 +42,18 @@ const Register = () => {
             enqueueSnackbar("Password Doesn't Match", { variant: "error" });
             return;
         }
-        if (!avatar) {
-            enqueueSnackbar("Select Avatar", { variant: "error" });
-            return;
-        }
 
         const formData = new FormData();
         formData.set("name", name);
         formData.set("email", email);
         formData.set("gender", gender);
         formData.set("password", password);
-        formData.set("avatar", avatar);
 
         dispatch(registerUser(formData));
     }
 
     const handleDataChange = (e) => {
-        if (e.target.name === "avatar") {
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                if (reader.readyState === 2) {
-                    setAvatarPreview(reader.result);
-                    setAvatar(reader.result);
-                }
-            };
-
-            reader.readAsDataURL(e.target.files[0]);
-
-        } else {
-            setUser({ ...user, [e.target.name]: e.target.value });
-        }
+        setUser({ ...user, [e.target.name]: e.target.value });
     }
 
     useEffect(() => {
@@ -88,7 +68,7 @@ const Register = () => {
 
     return (
         <>
-            <MetaData title="Register | Flipkart" />
+            <MetaData title="Register" />
 
             {loading && <BackdropLoader />}
             <main className="w-full mt-12 sm:pt-20 sm:mt-0">
@@ -175,23 +155,7 @@ const Register = () => {
                                 </div>
                                 {/* <!-- input container column --> */}
 
-                                <div className="flex flex-col w-full justify-between sm:flex-row gap-3 items-center">
-                                    <Avatar
-                                        alt="Avatar Preview"
-                                        src={avatarPreview}
-                                        sx={{ width: 56, height: 56 }}
-                                    />
-                                    <label className="rounded font-medium bg-gray-400 text-center cursor-pointer text-white w-full py-2 px-2.5 shadow hover:shadow-lg">
-                                        <input
-                                            type="file"
-                                            name="avatar"
-                                            accept="image/*"
-                                            onChange={handleDataChange}
-                                            className="hidden"
-                                        />
-                                        Choose File
-                                    </label>
-                                </div>
+                              
                                 <button type="submit" className="text-white py-3 w-full bg-primary-orange shadow hover:shadow-lg rounded-sm font-medium">Signup</button>
                                 <Link to="/login" className="hover:bg-gray-50 text-primary-blue text-center py-3 w-full shadow border rounded-sm font-medium">Existing User? Log in</Link>
                             </div>

@@ -42,7 +42,7 @@ const Shipping = () => {
 
     return (
         <>
-            <MetaData title="Flipkart: Shipping Details" />
+            <MetaData title="Shipping Details" />
             <main className="w-full mt-20">
 
                 {/* <!-- row --> */}
@@ -112,7 +112,7 @@ const Shipping = () => {
                                                 defaultValue={country}
                                                 disabled
                                                 label="Country"
-                                                // onChange={(e) => setCountry(e.target.value)}
+                                                //onChange={(e) => setCountry(e.target.value)}
                                             >
                                                 <MenuItem value={'IN'}>India</MenuItem>
                                             </Select>

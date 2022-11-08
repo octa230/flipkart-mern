@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please enter product name"],
         trim: true
     },
-    description: {
+   /*  description: {
         type: String,
         required: [true, "Please enter product description"]
     },
@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema({
                 required: true
             }
         }
-    ],
+    ], */
     price: {
         type: Number,
         required: [true, "Please enter product price"]
@@ -48,7 +48,7 @@ const productSchema = new mongoose.Schema({
             }
         }
     ],
-    brand: {
+    /* brand: {
         name: {
             type: String,
             required: true
@@ -63,11 +63,18 @@ const productSchema = new mongoose.Schema({
                 required: true,
             }
         }
-    },
+    }, */
     category: {
         type: String,
         required: [true, "Please enter product category"]
     },
+    pincodes:[
+        {
+            city: {type: String},
+            zipcode: {type: String},
+        }
+    ],
+
     stock: {
         type: Number,
         required: [true, "Please enter product stock"],

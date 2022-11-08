@@ -89,25 +89,26 @@ exports.createProduct = asyncErrorHandler(async (req, res, next) => {
         });
     }
 
-    const result = await cloudinary.v2.uploader.upload(req.body.logo, {
+    /*  const result = await cloudinary.v2.uploader.upload(req.body.logo, {
         folder: "brands",
-    });
-    const brandLogo = {
+    }); */
+    
+    /* const brandLogo = {
         public_id: result.public_id,
         url: result.secure_url,
-    };
+    }; */
 
-    req.body.brand = {
+    /* req.body.brand = {
         name: req.body.brandname,
         logo: brandLogo
-    }
+    } */
     req.body.images = imagesLink;
     req.body.user = req.user.id;
 
-    let specs = [];
+    /* let specs = [];
     req.body.specifications.forEach((s) => {
         specs.push(JSON.parse(s))
-    });
+    }); */
     req.body.specifications = specs;
 
     const product = await Product.create(req.body);
@@ -153,7 +154,7 @@ exports.updateProduct = asyncErrorHandler(async (req, res, next) => {
         req.body.images = imagesLink;
     }
 
-    if (req.body.logo.length > 0) {
+/*     if (req.body.logo.length > 0) {
         await cloudinary.v2.uploader.destroy(product.brand.logo.public_id);
         const result = await cloudinary.v2.uploader.upload(req.body.logo, {
             folder: "brands",
@@ -167,7 +168,7 @@ exports.updateProduct = asyncErrorHandler(async (req, res, next) => {
             name: req.body.brandname,
             logo: brandLogo
         }
-    }
+    } */
 
     let specs = [];
     req.body.specifications.forEach((s) => {
