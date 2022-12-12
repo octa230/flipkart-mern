@@ -13,7 +13,8 @@ exports.getAllProducts = asyncErrorHandler(async (req, res, next) => {
 
     const searchFeature = new SearchFeatures(Product.find(), req.query)
         .search()
-        .filter();
+        .filter()
+        .zipSearch();
 
     let products = await searchFeature.query;
     let filteredProductsCount = products.length;

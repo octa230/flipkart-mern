@@ -6,10 +6,11 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please enter product name"],
         trim: true
     },
-   /*  description: {
+    description: {
         type: String,
         required: [true, "Please enter product description"]
     },
+    /*
     highlights: [
         {
             type: String,
@@ -32,7 +33,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: [true, "Please enter product price"]
     },
-    cuttedPrice: {
+    salePrice: {
         type: Number,
         required: [true, "Please enter cutted price"]
     },
@@ -64,16 +65,12 @@ const productSchema = new mongoose.Schema({
             }
         }
     }, */
+
     category: {
         type: String,
         required: [true, "Please enter product category"]
     },
-    pincodes:[
-        {
-            city: {type: String},
-            zipcode: {type: String},
-        }
-    ],
+    pincodes:[String],
 
     stock: {
         type: Number,
@@ -81,10 +78,7 @@ const productSchema = new mongoose.Schema({
         maxlength: [4, "Stock cannot exceed limit"],
         default: 1
     },
-    warranty: {
-        type: Number,
-        default: 1
-    },
+ 
     ratings: {
         type: Number,
         default: 0

@@ -18,6 +18,18 @@ class SearchFeatures {
         return this;
     }
 
+    zipSearch(){
+        const zipCode = this.queryString.zipCode ? {
+            zipcode: {
+                $regex: this.queryString.zipCode,
+                $options: "i",
+            }
+        } : {};
+
+        this.query = this.query.find({...zipCode})
+        return this;
+    }
+
     filter() {
         const queryCopy = { ...this.queryString }
 

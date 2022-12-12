@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+``
 
 {/**import mobiles from '../../assets/images/Categories/phone.png';
 import fashion from '../../assets/images/Categories/fashion.png';

@@ -97,7 +97,8 @@ const Sidebar = ({ activeTab }) => {
                     <Link className="p-3 pl-14 hover:bg-blue-50 hover:text-primary-blue" to="/">My Coupons</Link>
                     <Link className="p-3 pl-14 hover:bg-blue-50 hover:text-primary-blue" to="/">My Reviews & Ratings</Link>
                     <Link className="p-3 pl-14 hover:bg-blue-50 hover:text-primary-blue" to="/">All Notifications</Link>
-                    <Link to="/wishlist" className={`${activeTab === "wishlist" ? "bg-blue-50 text-primary-blue font-medium" : "hover:bg-blue-50 hover:text-primary-blue"} p-3 pl-14`}>My Wishlist</Link>
+                    <Link to="/wishlist" className={`${activeTab === "wishlist" ? "bg-blue-50 text-primary-blue font-medium" 
+                    : "hover:bg-blue-50 hover:text-primary-blue"} p-3 pl-14`}>My Wishlist</Link>
                 </div>
                 {/* <!-- my stuff tab --> */}
 
