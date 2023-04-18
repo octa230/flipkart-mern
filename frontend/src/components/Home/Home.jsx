@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, getSliderProducts } from '../../actions/productAction';
 import { useSnackbar } from 'notistack';
 import MetaData from '../Layouts/MetaData';
+import MinCategory from '../Layouts/MinCategory';
 
 const Home = () => {
 
@@ -25,7 +26,8 @@ const Home = () => {
 
   return (
     <>
-      <MetaData title="Online flowers Shopping Site & More. Best Offers!" />
+      <MetaData title="Online Shopping Site & More. Best Offers!" />
+      <MinCategory/>
       <Categories />
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <Banner />

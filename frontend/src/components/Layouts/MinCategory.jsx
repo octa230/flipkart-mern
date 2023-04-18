@@ -2,16 +2,16 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link } from 'react-router-dom';
 
 const categories = [
-    "Birthday",
-    "Anniversary",
-    "Cakes",
-    "Flowers",
-    "Personalised",
-    "Sympathy",
-    "Plants",
-    "Gifts & More",
-    "Occassions",
-    "Global",
+    "electronics",
+    "food",
+    "clothes",
+    "shoes",
+    "jewelry",
+    "phones & accessories",
+    "electronic appliances",
+    "spare parts & More",
+    "art materials",
+    "kitchen wear",
 ]
 
 const MinCategory = () => {

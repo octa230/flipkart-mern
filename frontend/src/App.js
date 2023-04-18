@@ -7,6 +7,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { loadUser } from './actions/userAction';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import UpdateProfile from './components/User/UpdateProfile';
 import UpdatePassword from './components/User/UpdatePassword';
 import ForgotPassword from './components/User/ForgotPassword';
@@ -36,17 +37,18 @@ import UpdateUser from './components/Admin/UpdateUser';
 import ReviewsTable from './components/Admin/ReviewsTable';
 import Wishlist from './components/Wishlist/Wishlist';
 import NotFound from './components/NotFound';
+import { useState } from 'react';
 
 function App() {
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  // const [stripeApiKey, setStripeApiKey] = useState("");
+   const [stripeApiKey, setStripeApiKey] = useState("");
 
-  // async function getStripeApiKey() {
-  //   const { data } = await axios.get('/api/v1/stripeapikey');
-  //   setStripeApiKey(data.stripeApiKey);
-  // }
+    async function getStripeApiKey() {
+    const { data } = await axios.get('/api/v1/stripeapikey');
+    setStripeApiKey(data.stripeApiKey);
+  }
 
   useEffect(() => {
     WebFont.load({
@@ -58,7 +60,7 @@ function App() {
 
   useEffect(() => {
     dispatch(loadUser());
-    // getStripeApiKey();
+    //getStripeApiKey();
   }, [dispatch]);
 
   // always scroll to top on route/path change
@@ -73,9 +75,9 @@ function App() {
   // disable right click
   window.addEventListener("contextmenu", (e) => e.preventDefault());
   window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 123) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
+    if (e.keydown === 123) e.preventDefault();
+    if (e.ctrlKey && e.shiftKey && e.keydown === 73) e.preventDefault();
+    if (e.ctrlKey && e.shiftKey && e.keydown === 74) e.preventDefault();
   });
   
   return (
@@ -107,11 +109,11 @@ function App() {
 
         <Route path="/process/payment" element={
           <ProtectedRoute>
-            {/* // stripeApiKey && ( */}
-            {/* // <Elements stripe={loadStripe(stripeApiKey)}> */}
+            {stripeApiKey && ( 
+           {/* <elements stripe={loadStripe(stripeApiKey)}> 
             <Payment />
-            {/* // </Elements> */}
-            {/* ) */}
+            </elements> */}
+            )}
           </ProtectedRoute>
         } ></Route>
 
